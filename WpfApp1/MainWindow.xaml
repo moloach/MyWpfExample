@@ -1,0 +1,114 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded"  >
+    <Window.Resources>
+        <GeometryGroup x:Key="clipGremetry" FillRule="Nonzero">
+            <EllipseGeometry RadiusX="75" RadiusY="50" Center="100,150"></EllipseGeometry>
+            <EllipseGeometry RadiusX="100" RadiusY="25" Center="200,150"></EllipseGeometry>
+            <EllipseGeometry RadiusX="75" RadiusY="130" Center="140,140"></EllipseGeometry>
+        </GeometryGroup>
+        <GeometryGroup x:Key="clipGremetry3" >
+            <PathGeometry>
+                <PathFigure IsClosed="True" StartPoint="0,0">
+                    <LineSegment Point="20,90"></LineSegment>
+                    <ArcSegment Point="380,90"  Size="100,20"></ArcSegment>
+                    <LineSegment Point="400,0"></LineSegment>
+                </PathFigure>
+                <!--<PathFigure  StartPoint="0,30">
+                    <LineSegment Point="10,30" />
+                    <ArcSegment Point="390,30" Size="10,20"></ArcSegment>
+                    <LineSegment Point="10,30" />
+                </PathFigure>-->
+                <!--<PathFigure IsClosed="True" StartPoint="0,0">
+                    <LineSegment Point="10,30" />
+                </PathFigure>-->
+            </PathGeometry>
+
+        </GeometryGroup>
+
+    </Window.Resources>
+
+    <Grid x:Name="all">
+        <!--<Grid.Background>
+            <LinearGradientBrush SpreadMethod="Reflect" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,10">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="1" Color="Yellow" />
+                    <GradientStop Offset="1" Color="Black" />
+                    <GradientStop Offset="0.5" Color="Black" />
+                    <GradientStop Offset="0.5" Color="Yellow" />
+                    <GradientStop Offset="0" Color="Yellow" />
+                    <GradientStop Offset="0" Color="Black" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>-->
+
+
+        <!--<ListBox x:Name="text" Background="{x:Null}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="{Binding name}"/>
+                        <TextBlock Text="{Binding sn}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
+
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>-->
+        <!--<Button Content="切换"  Click="Button_Click" Width="200" Panel.ZIndex="4000"/>
+
+
+        <Image x:Name="foreSight"  Stretch="Fill" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Resources/white.jpg"/>
+        <Image x:Name="backSight" Grid.Column="1" Source="Resources/BG6-small.png" />-->
+
+
+        <!--<TabControl Grid.RowSpan="2" Grid.ColumnSpan="2">
+            -->
+        <!--<TabItem Header="Viewport2DVisual3D">
+                <local:UserControlViewport2DVisual3D/>
+            </TabItem>
+            <TabItem Header="ModelVisual3D">
+                <local:UserControlModelVisual3D/>
+            </TabItem>-->
+        <!--
+
+            <TabItem Header="ShapeUserControl">
+                <local:ShapeUserControl/>
+            </TabItem>
+
+        </TabControl>-->
+
+        <!--<StackPanel Margin="20">
+            <Canvas HorizontalAlignment="Left" Width="340" Height="240" >
+                <Image Width="100" Height="100" Source="Resources/white.jpg">
+                    <Image.RenderTransform>
+                        <MatrixTransform x:Name="myMatrixTransform">
+                            <MatrixTransform.Matrix >
+
+                                -->
+        <!-- OffsetX and OffsetY specify the position of the button,M11 stretches it, and M12 skews it. -->
+        <!--
+                                <Matrix OffsetX="0" OffsetY="0" M11="1" M12="1"/>
+                            </MatrixTransform.Matrix>
+                        </MatrixTransform>
+                    </Image.RenderTransform>
+                </Image>
+            </Canvas>
+        </StackPanel>-->
+        <Image Clip="{StaticResource clipGremetry3}" Width="400" Height="125"
+               Stretch="UniformToFill" Source="Resources/white.jpg" />
+
+    </Grid>
+</Window>

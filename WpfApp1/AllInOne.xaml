@@ -1,0 +1,292 @@
+﻿<Window x:Class="WpfApp1.AllInOne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="AllInOne" Height="1080" Width="1920" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <GeometryGroup x:Key="BackMirror" >
+            <PathGeometry>
+                <PathFigure IsClosed="True" StartPoint="0,0">
+                    <LineSegment Point="20,90"></LineSegment>
+                    <ArcSegment Point="380,90"  Size="100,20"></ArcSegment>
+                    <LineSegment Point="400,0"></LineSegment>
+                </PathFigure>
+            </PathGeometry>
+        </GeometryGroup>
+
+        <GeometryGroup x:Key="DriveInfo" >
+            <PathGeometry>
+                <PathFigure IsClosed="True" StartPoint="0,50">
+                    <LineSegment Point="0,400"></LineSegment>
+                    <LineSegment Point="1920,400"></LineSegment>
+                    <ArcSegment Point="0,50"  Size="1400,200" SweepDirection="Counterclockwise"></ArcSegment>
+                </PathFigure>
+            </PathGeometry>
+        </GeometryGroup>
+
+        <GeometryGroup x:Key="Geometry">
+            <RectangleGeometry Rect="0,0 100,100" />
+            <EllipseGeometry Center="150,50" RadiusX="35" RadiusY="25" />
+        </GeometryGroup>
+
+        <GeometryGroup x:Key="LeftView">
+            <PathGeometry>
+                <PathFigure IsClosed="True" StartPoint="0,0">
+                    <LineSegment Point="320,30"></LineSegment>
+                    <LineSegment Point="320,570"></LineSegment>
+                    <!--<LineSegment Point="0,600"></LineSegment>-->
+                    <ArcSegment Point="0,600" Size="1400,200" />
+                </PathFigure>
+            </PathGeometry>
+        </GeometryGroup>
+        <GeometryGroup x:Key="RightView">
+            <PathGeometry>
+                <PathFigure IsClosed="True" StartPoint="0,30">
+                    <LineSegment Point="320,0"></LineSegment>
+                    <LineSegment Point="320,600"></LineSegment>
+                    <!--<LineSegment Point="0,570"></LineSegment>-->
+                    <ArcSegment Point="0,570" Size="1400,200" />
+                </PathFigure>
+            </PathGeometry>
+        </GeometryGroup>
+
+
+        <CombinedGeometry x:Key="geometry2" GeometryCombineMode="Union">
+            <CombinedGeometry.Geometry1>
+                <RectangleGeometry Rect="0,0 100,100" />
+            </CombinedGeometry.Geometry1>
+            <CombinedGeometry.Geometry2>
+                <EllipseGeometry Center="85,50" RadiusX="65" RadiusY="35" />
+            </CombinedGeometry.Geometry2>
+        </CombinedGeometry>
+
+        <CombinedGeometry x:Key="NO">
+            <CombinedGeometry.Geometry1>
+                <CombinedGeometry GeometryCombineMode="Exclude">
+                    <CombinedGeometry.Geometry1>
+                        <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <EllipseGeometry Center="50,50" RadiusX="40" RadiusY="40" />
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </CombinedGeometry.Geometry1>
+            <CombinedGeometry.Geometry2>
+                <RectangleGeometry Rect="44,5 10,90">
+                    <RectangleGeometry.Transform>
+                        <RotateTransform Angle="45" CenterX="50" CenterY="50"/>
+                    </RectangleGeometry.Transform>
+                </RectangleGeometry>
+            </CombinedGeometry.Geometry2>
+        </CombinedGeometry>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="350"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="bilibili"  />
+
+        <Image Source="Resources/white.jpg"  Grid.Column="1" Width="400" Stretch="Fill" Height="125" Clip="{StaticResource BackMirror}" Panel.ZIndex="3"/>
+
+        <Canvas Grid.Column="1" Grid.Row="1">
+            <Path Fill="Yellow" Stroke="Blue" Margin="5" Canvas.Top="10" Canvas.Left="10" Data="{StaticResource Geometry}" />
+            <Path Fill="Green" Stroke="Blue" Margin="5" Canvas.Top="150" Canvas.Left="10" Data="{StaticResource Geometry}" />
+            <Path Fill="YellowGreen" Stroke="Blue" Margin="5" Canvas.Top="280" Canvas.Left="10" Data="{StaticResource geometry2}" />
+            <Path Fill="Red" Stroke="Blue" Margin="5" Canvas.Top="400" Canvas.Left="10" Data="{StaticResource NO}" />
+            <Path Fill="Red" Stroke="Blue" Margin="5" Canvas.Top="10" Canvas.Left="250">
+                <Path.Data>
+                    <PathGeometry Figures="M 10,100 L 100,100 L 100,50 Z" />
+                </Path.Data>
+            </Path>
+        </Canvas>
+
+
+        <Image Grid.Row="1" Source="Resources/phonePaper.jpg" Clip="{StaticResource LeftView}" Stretch="Fill"/>
+        <Image Grid.Row="1" Grid.Column="2" Source="Resources/phonePaper.jpg" Clip="{StaticResource RightView}" Stretch="Fill"   />
+
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" Background="#7A000000" Clip="{StaticResource DriveInfo}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--方向盘 驾驶模式 转向灯-->
+            <Grid VerticalAlignment="Center"  Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="mode" Source="Resources/Manual_mode.png" Grid.ColumnSpan="3" Margin="0,0,0,10"/>
+
+                <Image x:Name="Fxp" Source="Resources/large_Fxp.png" Width="183" Grid.Column="1" Grid.Row="1">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform/>
+                            <ScaleTransform/>
+                            <RotateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="Fxp_mini" Source="Resources/mini_Fxp.png" Height="167" Grid.Column="1" Grid.Row="1">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform/>
+                            <ScaleTransform/>
+                            <RotateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <StackPanel Grid.Column ="0" Grid.Row="1">
+                    <ProgressBar x:Name="brakeBar" 
+                                 Width="80" Height="80"  Background="{x:Null}" Foreground="#FF00FF17" FontSize="22" 
+                                 BorderBrush="#FF595858" Padding="0" BorderThickness="7,5,5,5"/>
+                    <Label Content="刹车" />
+                    <Image x:Name="leftLightImg" HorizontalAlignment="Center" Height="64"  VerticalAlignment="Bottom" 
+                           Width="64" Source="Resources/leftOff.png"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.Row="1">
+                    <ProgressBar x:Name="throttleBar" 
+                                 Width="80" Height="80"  Background="{x:Null}" Foreground="#FF00FF17" FontSize="22" 
+                                 BorderBrush="#FF595858" Padding="0" BorderThickness="7,5,5,5"/>
+                    <Label Content="油门" />
+                    <Image x:Name="rightLightImg" HorizontalAlignment="Center" Height="64"  VerticalAlignment="Bottom" 
+                           Width="64" Source="Resources/rightOff.png"/>
+                </StackPanel>
+            </Grid>
+
+
+            <!--左边信息区-->
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <Label Name="angleText"  Height="50" Width="200"/>
+                        <Label Name="downAngleText"  Height="50" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Style="{StaticResource ModeStackPanel}" Grid.Row="1">
+                        <Label Content="0" Name="RTTLabel" Style="{StaticResource FaultInfoLabel}" />
+                        <Label Content="网络延时" />
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    <StackPanel Orientation="Vertical" Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="connectImg"  Source="Resources/connectOff.png" Style="{StaticResource InfoImage}"/>
+                        <Label Content="车辆连接" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="farLightImg"  Style="{StaticResource InfoImage}" Source="Resources/farLightOff.png"/>
+                        <Label Content="远光灯" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Style="{StaticResource ModeStackPanel}" Grid.Column="2">
+                        <Image x:Name="handBrakeImage"   Style="{StaticResource InfoImage}" Source="Resources/handbrakeOff.png"/>
+                        <Label Content="手刹" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="enableImg" Style="{StaticResource InfoImage}" Source="Resources/Off.png"/>
+                        <Label Content="远程使能" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1"  Grid.Column="1" Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="nearLightImg" Style="{StaticResource InfoImage}" Source="Resources/nearLightOff.png"/>
+                        <Label Content="近光灯" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1"  Grid.Column="2" Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="urgencyImg" Style="{StaticResource InfoImage}" Source="Resources/urgencyOff.png"/>
+                        <Label Content="紧急信号灯" />
+                    </StackPanel>
+                </Grid>
+                <StackPanel Grid.Column="3" Style="{StaticResource ModeStackPanel}">
+                    <Label x:Name="speed" Content="0" Style="{StaticResource MInfoImage}"/>
+                    <Label Content="车速km/h" />
+                </StackPanel>
+            </Grid>
+
+            <!--右边信息区-->
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Style="{StaticResource ModeStackPanel}">
+                    <Label x:Name="gear" Content="P" Style="{StaticResource MInfoImage}" />
+                    <Label Content="挡位" />
+                </StackPanel>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="liftImg"  Source="Resources/lift.png" Style="{StaticResource InfoImage}"/>
+                        <Label Content="货斗举升" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1"   Style="{StaticResource ModeStackPanel}">
+                        <Image x:Name="jerkImg" Style="{StaticResource InfoImage}" Source="Resources/jerkOff.png"/>
+                        <Label Content="急停" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"  Grid.Column="1" Style="{StaticResource ModeStackPanel}">
+                        <Label Content="..." Style="{StaticResource FaultInfoLabel}" Name="faultNum" />
+                        <Label Content="故障数" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"   Grid.Column="2" Style="{StaticResource ModeStackPanel}">
+                        <Label Content="..." Style="{StaticResource FaultInfoLabel}" Name="faultLevel" />
+                        <Label Content="故障等级" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1"  Grid.Column="1" Style="{StaticResource ModeStackPanel}">
+                        <Label Content="..." Style="{StaticResource FaultInfoLabel}" Name="faultNo"/>
+                        <Label Content="故障码" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Style="{StaticResource ModeStackPanel}" Grid.Column="2" Grid.Row="1">
+                        <Label Content="..." Name="autoDriveFaultCode" Style="{StaticResource FaultInfoLabel}" />
+                        <Label Content="自动驾驶故障码" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

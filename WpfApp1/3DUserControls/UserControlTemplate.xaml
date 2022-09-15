@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="WpfApp1.UserControlTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Viewbox>
+        <Grid Width="200" Height="200">
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFF10707" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="A" VerticalAlignment="Bottom"/>
+                </Grid>
+
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFF17C07" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="B" VerticalAlignment="Bottom"/>
+                </Grid>
+
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFF1F107" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="C" VerticalAlignment="Bottom"/>
+                </Grid>
+
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF27F107" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="D" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF07F1E6" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="E" VerticalAlignment="Bottom"/>
+                </Grid>
+
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF073CF1" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="F" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid>
+                    <Rectangle Width="1" Margin="10 0">
+                        <Rectangle.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFD107F1" Offset="0"/>
+                                <GradientStop Color="Gainsboro" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="PlayClicked" Content="G" VerticalAlignment="Bottom"/>
+                </Grid>
+
+            </StackPanel>
+
+            <TextBlock  x:Name="txtblkSing" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF55A02" Offset="0"/>
+                        <GradientStop Color="#FFC90BF3" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
+        </Grid>
+    </Viewbox>
+</UserControl>

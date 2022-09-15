@@ -1,0 +1,128 @@
+﻿<Window x:Class="WpfApp1.ListRender"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ListRender" Height="720" Width="1700" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="CarNameLabel" TargetType="Label">
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="Foreground" Value="#FF5F6468" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="69" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <!--引用资源-->
+        <local:BackgroundPicConverter x:Key="BackgroundPicConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            
+        <StackPanel Width="489" Height="69" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Resources/carModeOff.png" />
+            </StackPanel.Background>
+            <Label HorizontalAlignment="Left" Content="矿卡1（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+        </StackPanel>
+            <Button Click="Button_Click" Content="scroll" Width="100"/>
+        </StackPanel>
+
+        <ListView Grid.Column="1" Name="CarListView" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Width="489" Height="69" >
+                        <StackPanel.Background>
+                            <!--<ImageBrush ImageSource="Resources/carModeOff.png" />-->
+                            <ImageBrush ImageSource="{Binding Status, Converter={StaticResource BackgroundPicConverter}}" />
+                        </StackPanel.Background>
+                        <Label HorizontalAlignment="Left" Content="{Binding Path=Name}" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ScrollViewer Grid.Column="2" Height="535" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          VerticalScrollBarVisibility="Hidden" 
+                         
+                          >
+            <StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeConnect.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡0（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeBusy.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡1（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeOff.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡2（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeOff.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡3（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeOff.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡4（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeBusy.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡5（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeOff.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡6（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeConnect.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡7（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeConnect.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡8（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeConnect.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡9（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Width="489" Height="69" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resources/carModeConnect.png" />
+                    </StackPanel.Background>
+                    <Label HorizontalAlignment="Left" Content="矿卡10（卡特）" Style="{StaticResource CarNameLabel}" Margin="120 0 0 0"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
