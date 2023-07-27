@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 
 namespace WpfApp1
@@ -26,6 +27,11 @@ namespace WpfApp1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+           
+
+
+
             RetrieveDrawing(this);
         }
 
@@ -66,5 +72,24 @@ namespace WpfApp1
                 }
             }
         }
+
+
+        #region 3D example
+
+        private void View3D()
+        {
+            PerspectiveCamera myPCamera = new PerspectiveCamera();
+
+            myPCamera.Position = new Point3D(0, 0, 2);
+
+            myPCamera.LookDirection = new Vector3D(0, 0, -1);
+
+
+            myPCamera.FieldOfView = 60;
+
+
+
+        }
+        #endregion
     }
 }

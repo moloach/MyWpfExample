@@ -52,9 +52,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <ScrollViewer Grid.Column="2" Height="535" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"
-                          VerticalScrollBarVisibility="Hidden" 
-                         
-                          >
+                          VerticalScrollBarVisibility="Hidden">
             <StackPanel>
                 <StackPanel Width="489" Height="69" >
                     <StackPanel.Background>

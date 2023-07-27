@@ -7,21 +7,8 @@
         mc:Ignorable="d"
         Title="ClinderProgress" Height="450" Width="800">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Rectangle  Height="100"       
-                        Width="100"            
-                        Fill="#FF7E9EC0" 
-                        Stroke="#FFFF0EC4"
-                        StrokeThickness="5"
-                        RadiusX="50"
-                        RadiusY="20" />
-            <Ellipse HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     StrokeThickness="5"
-                     Stroke="Yellow"
-                     Fill="Red"
-                     Width="100"
-                     Height="40"
-                     Opacity="0.5" />
-            <Rectangle Height="100" VerticalAlignment="Bottom" />
+        <Rectangle  Height="100" Width="100"  Fill="#FF7E9EC0"   Stroke="#FFFF0EC4"  StrokeThickness="5"  RadiusX="50"  RadiusY="20" />
+        <Ellipse HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness="5" Stroke="Yellow" Fill="Red" Width="100" Height="40" Opacity="0.5" />
+        <Rectangle Height="100" VerticalAlignment="Bottom" />
     </Grid>
 </Window>

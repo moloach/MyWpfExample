@@ -40,6 +40,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\wpfApp.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -77,6 +80,9 @@
     </Compile>
     <Compile Include="AutoRun.cs" />
     <Compile Include="BackgroundPicConverter.cs" />
+    <Compile Include="BaseControlsWindow.xaml.cs">
+      <DependentUpon>BaseControlsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ButtonWindow.xaml.cs">
       <DependentUpon>ButtonWindow.xaml</DependentUpon>
     </Compile>
@@ -119,6 +125,13 @@
     <Compile Include="3DUserControls\ShapeUserControl.xaml.cs">
       <DependentUpon>ShapeUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ScrollViewerExtensions.cs" />
+    <Compile Include="SimpleDataGridSample.xaml.cs">
+      <DependentUpon>SimpleDataGridSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraceLine.xaml.cs">
+      <DependentUpon>TraceLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trackball.cs" />
     <Compile Include="3DUserControls\UserControlModelVisual3D.xaml.cs">
       <DependentUpon>UserControlModelVisual3D.xaml</DependentUpon>
@@ -130,11 +143,18 @@
       <DependentUpon>UserControlViewport2DVisual3D.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <Compile Include="VariableCarLine.xaml.cs">
+      <DependentUpon>VariableCarLine.xaml</DependentUpon>
+    </Compile>
     <Page Include="3DWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AllInOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControlsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +222,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SimpleDataGridSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style\Origin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,6 +243,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="3DUserControls\UserControlViewport2DVisual3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TraceLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VariableCarLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -333,6 +365,9 @@
     <PackageReference Include="System.Configuration.ConfigurationManager">
       <Version>5.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wpfApp.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

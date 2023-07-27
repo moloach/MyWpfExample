@@ -7,15 +7,14 @@ using System.Windows.Media;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// LineUserControl.xaml 的交互逻辑
-    /// </summary>
     public partial class MarkLine : UserControl
     {
         private Point point1, point2;
         // static double left_gradient;//斜线斜率
         //private static double right_gradient;
 
+
+        private PointCollection originPoints;
         public MarkLine(string typename, string pointsData)
         {
             InitializeComponent();
@@ -46,6 +45,9 @@ namespace WpfApp1
                 result[0],
                 result[3],
             };
+
+
+            originPoints = result;
         }
 
 
@@ -98,7 +100,7 @@ namespace WpfApp1
 
         private PointCollection _points;// = new PointCollection();
 
-        private void thmStart_DragDelta(object sender, DragDeltaEventArgs e)
+        private void ThmStart_DragDelta(object sender, DragDeltaEventArgs e)
         {
             Thumb thm = (Thumb)sender;
             double y = Canvas.GetTop(thm) + e.VerticalChange;
@@ -117,7 +119,7 @@ namespace WpfApp1
             };
         }
 
-        private void thmEnd_DragDelta(object sender, DragDeltaEventArgs e)
+        private void ThmEnd_DragDelta(object sender, DragDeltaEventArgs e)
         {
             Thumb thm = (Thumb)sender;
             double y = Canvas.GetTop(thm) + e.VerticalChange + 8;
@@ -137,7 +139,7 @@ namespace WpfApp1
             };
         }
 
-        private void thmPoint1_DragDelta(object sender, DragDeltaEventArgs e)
+        private void ThmPoint1_DragDelta(object sender, DragDeltaEventArgs e)
         {
             Thumb thm = (Thumb)sender;
             Point startPoint = DataPoints[0];
@@ -167,7 +169,7 @@ namespace WpfApp1
             point1 = new Point { X = x, Y = y };
         }
 
-        private void thmPoint2_DragDelta(object sender, DragDeltaEventArgs e)
+        private void ThmPoint2_DragDelta(object sender, DragDeltaEventArgs e)
         {
             Thumb thm = (Thumb)sender;
             //Point startPoint = point1 == null ? DataPoints[0] : point1;
@@ -200,16 +202,16 @@ namespace WpfApp1
         public string Save()
         {
             var result = new List<Point>();
-
             result.Add(DataPoints[0]);
-            if (point1.X == 0 && point1.Y == 0)
+
+            if ((point1.X == 0 && point1.Y == 0) || (point1.X == originPoints[1].X && point1.Y == originPoints[1].Y))
             {
                 var startPoint = DataPoints[0];
                 var endPoint = DataPoints[1];
                 var point1x = startPoint.X + (endPoint.X - startPoint.X) / 3;
 
                 var gradient = (double)(endPoint.Y - startPoint.Y) / (endPoint.X - startPoint.X);
-                double point1y = gradient * (point1x - startPoint.X) + startPoint.Y;
+                double point1y = (gradient * (point1x - startPoint.X)) + startPoint.Y;
 
                 result.Add(new Point { Y = point1y, X = point1x });
             }
@@ -217,14 +219,14 @@ namespace WpfApp1
             {
                 result.Add(point1);
             }
-            if (point2.X == 0 && point2.Y == 0)
+            if ((point2.X == 0 && point2.Y == 0) || (point2.X == originPoints[2].X && point2.Y == originPoints[2].Y))
             {
                 var startPoint = DataPoints[0];
                 var endPoint = DataPoints[1];
                 var point1x = startPoint.X + (endPoint.X - startPoint.X) / 3 * 2;
 
                 var gradient = (double)(endPoint.Y - startPoint.Y) / (endPoint.X - startPoint.X);
-                double point1y = gradient * (point1x - startPoint.X) + startPoint.Y;
+                double point1y = (gradient * (point1x - startPoint.X)) + startPoint.Y;
 
                 result.Add(new Point { Y = point1y, X = point1x });
             }

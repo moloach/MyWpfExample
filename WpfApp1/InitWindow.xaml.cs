@@ -77,6 +77,18 @@ namespace WpfApp1
             {
                 window = new _3DWindow();
             }
+            else if (className == "VariableCarLine")
+            {
+                window = new VariableCarLine();
+            }
+            else if (className == "TraceLine")
+            {
+                window = new TraceLine();
+            }
+            else if (className == "SimpleDataGridSample")
+            {
+                window = new SimpleDataGridSample();
+            }
             else
             {
                 window = null;
