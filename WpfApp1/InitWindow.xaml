@@ -36,6 +36,7 @@
             <Button x:Name="VariableCarLine" Content="VariableCarLine" Click="Show_Click"/>
             <Button x:Name="TraceLine" Content="TraceLine" Click="Show_Click"/>
             <Button x:Name="SimpleDataGridSample" Content="SimpleDataGridSample" Click="Show_Click"/>
+            <Button x:Name="TestScrollViewer" Content="TestScrollViewer" Click="Show_Click"/>
         </StackPanel>
     </Grid>
 </Window>

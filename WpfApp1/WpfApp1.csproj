@@ -125,9 +125,12 @@
     <Compile Include="3DUserControls\ShapeUserControl.xaml.cs">
       <DependentUpon>ShapeUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ScrollViewerExtensions.cs" />
+    <Compile Include="ScrollViewer\ScrollViewerExtensions.cs" />
     <Compile Include="SimpleDataGridSample.xaml.cs">
       <DependentUpon>SimpleDataGridSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollViewer\TestScrollViewer.xaml.cs">
+      <DependentUpon>TestScrollViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="TraceLine.xaml.cs">
       <DependentUpon>TraceLine.xaml</DependentUpon>
@@ -243,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="3DUserControls\UserControlViewport2DVisual3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollViewer\TestScrollViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

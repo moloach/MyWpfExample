@@ -89,7 +89,12 @@ namespace WpfApp1
             {
                 window = new SimpleDataGridSample();
             }
+            else if(className == "TestScrollViewer")
+            {
+                window = new TestScrollViewer();
+            }
             else
+
             {
                 window = null;
             }
