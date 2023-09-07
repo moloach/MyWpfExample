@@ -110,6 +110,9 @@
     <Compile Include="InitWindow.xaml.cs">
       <DependentUpon>InitWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ItemsControl.xaml.cs">
+      <DependentUpon>ItemsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LearningWPF.xaml.cs">
       <DependentUpon>LearningWPF.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItemsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

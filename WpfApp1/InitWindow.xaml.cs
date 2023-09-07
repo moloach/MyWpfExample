@@ -89,9 +89,14 @@ namespace WpfApp1
             {
                 window = new SimpleDataGridSample();
             }
-            else if(className == "TestScrollViewer")
+            else if (className == "TestScrollViewer")
             {
                 window = new TestScrollViewer();
+            }
+
+            else if (className == "ItemsControls")
+            {
+                window = new ItemsControl();
             }
             else
 
