@@ -97,6 +97,9 @@ namespace WpfApp1
             else if (className == "ItemsControls")
             {
                 window = new ItemsControl();
+            }else if(className == "IPCExample")
+            {
+                window = new IPCExamples();
             }
             else
 
