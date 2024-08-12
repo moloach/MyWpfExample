@@ -138,6 +138,12 @@
     <Compile Include="ScrollViewer\TestScrollViewer.xaml.cs">
       <DependentUpon>TestScrollViewer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StepBarWindow.xaml.cs">
+      <DependentUpon>StepBarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StepBar\Converter.cs" />
+    <Compile Include="StepBar\StepBarItem.cs" />
+    <Compile Include="StepBar\StepBar.cs" />
     <Compile Include="TraceLine.xaml.cs">
       <DependentUpon>TraceLine.xaml</DependentUpon>
     </Compile>
@@ -240,6 +246,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SimpleDataGridSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StepBarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StepBar\StepBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -101,6 +101,10 @@ namespace WpfApp1
             {
                 window = new IPCExamples();
             }
+            else if(className == "StepBarWindow")
+            {
+                window = new StepBarWindow();
+            }
             else
 
             {

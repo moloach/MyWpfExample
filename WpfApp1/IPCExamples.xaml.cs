@@ -148,6 +148,7 @@ namespace WpfApp1
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 //App.systemLog.Error("语音模块，发送出错，错误为：" + e.ToString());
             }
         }
