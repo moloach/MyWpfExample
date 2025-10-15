@@ -41,6 +41,7 @@
             <Button x:Name="IPCExample" Content="IPCExample" Click="Show_Click"/>
             <Button x:Name="StepBarWindow" Content="StepBarWindow" Click="Show_Click"/>
             <Button x:Name="Stateless" Content="Stateless" Click="Show_Click"/>
+            <Button x:Name="InnerShadow" Content="InnerShadow" Click="Show_Click"/>
         </StackPanel>
     </Grid>
 </Window>

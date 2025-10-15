@@ -109,6 +109,10 @@ namespace WpfApp1
             {
                 window = new StatelessWindow();
             }
+            else if (className == "InnerShadow")
+            {
+                window = new InnerShadowWindow();
+            }
             else
 
             {
