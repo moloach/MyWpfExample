@@ -105,6 +105,10 @@ namespace WpfApp1
             {
                 window = new StepBarWindow();
             }
+            else if(className == "Stateless")
+            {
+                window = new StatelessWindow();
+            }
             else
 
             {
