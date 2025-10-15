@@ -45,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OracleClient" />
@@ -80,6 +81,10 @@
     </Compile>
     <Compile Include="AutoRun.cs" />
     <Compile Include="BackgroundPicConverter.cs" />
+    <Compile Include="Badge\Assists.cs" />
+    <Compile Include="Badge\BadgeAdorber.cs" />
+    <Compile Include="Badge\BaseAdorner.cs" />
+    <Compile Include="Badge\UIElementExtensions.cs" />
     <Compile Include="BaseControlsWindow.xaml.cs">
       <DependentUpon>BaseControlsWindow.xaml</DependentUpon>
     </Compile>
